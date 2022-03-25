@@ -29,6 +29,9 @@ tickettype = int(input("Please input the ticket that you want to buy(1 to 5):"))
 while tickettype > 5 or tickettype < 1:
         tickettype = int(input("Please enter a valid ticket type:"))
 notickets = int(input("Please enter the number of tickets you wish to buy:"))
+while tickettype == 5 and notickets < 6:
+    print ("A group ticket has to be bought for atleast 6 people")
+    tickettype = int(input("Please input the ticket that you want to buy(1 to 5):"))   
 bookingday = int(input("Confirm booking for 1= 1 Day or 2= 2 Days:"))
 if bookingday > 2 or bookingday < 1:
     bookingday = int(input("Please enter a valid booking day:"))
