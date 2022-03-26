@@ -62,6 +62,10 @@ print ("Total cost =", addedcost)
 ###TASK 3
 count = int(0)
 altprice = int(0)
+altticket = int(0)
+adults = int(0)
+seniors = int(0)
+children = int(0)
 if tickettype == 1 or tickettype == 3 and notickets >= 6:
     print ("Please consider getting group tickets for best value")
 while (tickettype == 1 or tickettype == 3) > 1 and (tickettype == 2) >= 3:
@@ -71,13 +75,23 @@ while (tickettype == 1 or tickettype == 3) > 1 and (tickettype == 2) >= 3:
         (tickettype == 3) == (tickettype == 3)-2
     (tickettype == 2) == (tickettype == 2) - 3
     count = count + 1
-if tickettype == 5 and bookingday == 1:
-     altprice = notickets * Costfor1day[0]
-     print ("An alternative route would have costed you ",altprice)
-     if altprice > addedcost:
-          print ("You have the best value")
-elif tickettype == 5 and bookingday ==2:
-     altprice = notickets * Costfor2days[0]
+if (tickettype == 5 and bookingday == 1) or (tickettype == 5 and bookingday == 2):
+     while notickets != adults + children + seniors:
+          adults = int(input("Please input number of adults"))
+          children = int(input("Please input number of children"))
+          seniors = int(input("Please input the number of seniors"))
+     if adults > 0:
+          notickets = adults + seniors + children
+     elif seniors > 0:
+          notickets = adults + seniors + children
+     elif children > 0:
+          notickets = adults + seniors + children
+     elif adults == 0 and children == 0 and seniors == 0:
+          notickets == notickets
+     if bookingday == 1:
+          altprice = (adults * Costfor1day[0]) + (children * Costfor1day[1]) + (seniors * Costfor1day[2])
+     elif bookingday == 2:
+          (adults * Costfor2days[0]) + (children * Costfor2days[1]) + (seniors * Costfor2days[2])
      print ("An alternative route would have costed you ",altprice)
      if altprice > addedcost:
           print ("You have the best value")
