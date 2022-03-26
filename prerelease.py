@@ -6,7 +6,7 @@ Costfor1day = [20.00,12.00,16.00,60.00,15.00]
 ExtraAttraction = ["1.lion feeding","2.penguin feeding","3.evening bbq"]
 AttractionCost = [2.50,2.00,5.00]
 Costfor2days = [30.00,18.00,24.00,90.00,22.50]
-'''for count in range (5):
+for count in range (5):
     print ("Ticket type =",TicketType[count])
     print ("Cost for a day =",Costfor1day[count],)
     print ("Cost for two days =",Costfor2days[count])
@@ -20,7 +20,7 @@ for count in range (7):
     bookingdays = x.day + count + 1 
     if bookingdays > 31:
         bookingdays = bookingdays - 31
-    print (bookingdays)'''
+    print (bookingdays)
 
 ###TASK 2
 tickettype = int(0)
